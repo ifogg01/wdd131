@@ -1,15 +1,13 @@
 const themeSelector = document.querySelector("#dark");
 
 function changeTheme() {
- console.log(themeSelector)   
     if (themeSelector.value === "dark") {
         document.body.classList.add("dark");
-
-        document.querySelector(".logo").src ="white-logo.png"; // Change 'white-logo.png' to your white logo source
+        document.querySelector(".logo").src = "byui-logo_white.png";
+        
     } else {
         document.body.classList.remove("dark");
-
-        document.querySelector(".logo").src = "blue-logo.png"; // Change 'blue-logo.png' to your blue logo source
+        document.querySelector(".logo").src = "byui-logo_blue.webp";
     }
 }
 themeSelector.addEventListener("change", changeTheme);

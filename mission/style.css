@@ -6,6 +6,7 @@
     color: #84cbf9;
     }
 
+.light
 
 .content {
     padding: 75px 70px;
@@ -65,9 +66,18 @@ li {
     text-align: left;
 }
 
+
+
 .logo {
-    width: 300px;
     height: 200px;
-    margin: 50px auto;
+    width: 300px;
+    margin: 100px;
+    float: left;
 }
 
+.logo2 {
+    height: 200px;
+    width: 300px;
+    margin: 100px;
+    float: left;
+}
