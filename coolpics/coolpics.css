@@ -1,0 +1,144 @@
+header {
+    
+    justify-content:space-between;
+    align-items:center;
+    padding: 0px 5%;
+    background-color: #7DCCB6;
+    box-shadow: 5px 5px 10px #6f7364;
+}
+.menulinks {
+    text-align: center;
+    padding: 25px 25px;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+    .menulinks {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .menulinks a {
+        margin-bottom: 15px; 
+    }
+}
+
+header a {
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    font-family: "Boogaloo", Arial, Helvetica, sans-serif;
+    text-shadow: 
+        -1px -1px 0 #6f7364,  
+        1px -2px 0 #6f7364,
+        -2px 1px 0 #000,
+        3px 1px 0 #6f7364;
+    
+}
+
+header a:hover {
+    color: rgb(95, 188, 178);
+    transform: scale(1.2);
+    transition: all 0.3s ease 0s;
+}
+header a:focus {
+color: rgb(37, 186, 250);
+}
+
+.gal_link {
+    text-align: center;
+    margin-top: -15px;
+    font-size: 20px;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif; 
+    
+}
+
+.gal_link a:hover{
+    color: rgb(95, 188, 178);
+    transform: scale(1.2);
+    transition: all 0.3s ease 0s;
+}
+
+.gal_link a:focus {
+    color: rgb(37, 186, 250);
+    }
+
+h1 {
+    font-size: 80px;
+    text-align: center;
+    color: whitesmoke;
+    text-shadow: 
+        -1px -1px 0 #6f7364,  
+        1px -2px 0 #6f7364,
+        -2px 1px 0 #000,
+        3px 1px 0 #6f7364;
+}
+
+body {
+    background-color: rgb(232, 247, 251);
+    background-size: cover;
+}
+
+h4 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: #6f7364;
+    margin-top: 5%;
+    font-size: 2em;
+    font-family: "Boogaloo", Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 1px rgb(37, 186, 250);
+}
+
+.gallery {
+    width: 80%;
+    margin: 100px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 20px;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.gal-card {
+    width: calc(70% - 10px); 
+    border: 10px solid rgb(183, 228, 247);
+}
+
+@media screen and (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .gal-card {
+        width: calc(50% - 30px); 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+
+    .gal-card {
+        width: 100%; 
+    }
+}
+
+footer {
+    justify-content:space-between;
+    align-items:center;
+    padding: 0px 5%;
+    background-color: #7DCCB6;
+    box-shadow: 5px 5px 10px #6f7364;
+}
