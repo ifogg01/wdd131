@@ -1,41 +1,89 @@
-.header {
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 5%;
-    
-    
-}
 .uppermenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-shadow: 5px 5px 10px #6f7364;
     background-color: #7DCCB6;
-}
-
-.menu-btn {
-    display: none; 
-}
-
-@media screen and (max-width: 768px) {
-    .menu-btn {
-        display: block; 
-    }
+    padding: 10px;
 }
 
 .menulinks {
-    text-align: center;
-    padding: 25px 25px;
     display: flex;
-    justify-content: space-around;
+    gap: 15px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menulinks {
+        display: none;
+        gap: 10px;
+        top: 60px; 
+        left: 0;
+        right: 0;
+        padding: 10px;
+    }
+
+    .menulinks.show {
+        display: flex;
+    }
+
+  
+}
+
+.viewer {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    overflow: auto; 
+}
+
+.viewer img {
+    
+    max-width: 100%;
+    max-height: 100%;
     
 }
 
-@media screen and (max-width: 768px) {
-    .menulinks {
-        flex-direction: column;
-        align-items: center;
+.viewer .close-viewer {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: aqua;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .uppermenu {
+        align-items: center; 
+    }
+
+
+    .menu-btn {
+        display: block; 
+        margin-bottom: 10px; 
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-btn {
+        display: inline-block;
     }
 
     .menulinks a {
-        margin-bottom: 15px;
+        display: block; 
     }
 }
 
@@ -65,7 +113,6 @@ header a:focus {
     text-align: center;
     margin-top: -15px;
     font-size: 20px;
-    font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -129,15 +176,6 @@ h2 {
     border: 10px solid rgb(183, 228, 247);
 }
 
-@media screen and (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gal-card {
-        width: calc(50% - 30px);
-    }
-}
 
 @media screen and (max-width: 480px) {
     .gallery {
@@ -156,3 +194,6 @@ footer {
     background-color: #7DCCB6;
     box-shadow: 5px 5px 10px #6f7364;
 }
+
+
+
