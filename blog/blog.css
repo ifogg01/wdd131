@@ -4,11 +4,12 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
+
 nav a {
     text-decoration: none;
     color: #AF1B3F;
-    justify-content: right;
 }
+
 nav {
     background-color: #f4f4f4;
     display: flex;
@@ -18,11 +19,14 @@ nav {
     border-bottom: 4px solid #EFC69B;
 }
 
+.article-date {
+    white-space: nowrap; 
+}
+
 p {
     align-content: center;
     padding-right: 1%;
 }
-
 
 header {
     color: #473144;
@@ -33,68 +37,86 @@ header {
 
 h2 {
     color: #AF1B3F;
-    padding: 0.5rem 0;
+    display: flex;
 }
 
 .book-cover {
     gap: 1rem;
     padding: 0.5rem 0;
+    width: 250px;
+    height: 300px;
+    margin: 1rem 0;
+    display: block;
+    
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
-    max-width: 800px;
+    max-width: 975px;
     margin: 0 auto;
     position: relative;
     padding-top: 1rem;
-  
 }
 
 main {
     display: flex;
-    flex-wrap: nowrap;
-    padding: 1rem;
-    
+    gap: 2rem;
+    padding: 2rem;
 }
 
 .article-container {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
-    align-items: stretch;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; 
 }
 
 .book-info {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
-    padding-right: 1rem;
+    padding: 1rem;
     border-right: 4px solid #EFC69B;
     margin-right: 1rem;
+    position: relative;
 }
 
+.book-info p {
+    position: relative; 
+    margin: 0;
+    text-align: end;
+}
+
+.article-date{
+    display: inline;
+}
 .book-details {
+    flex: 1;
+    padding-left: 1rem; 
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-right: 1px;
 }
 
-.book-cover {
-    width: 200px;
-    height: 300px;
-    background-color: #ddd;
-    margin: 1rem 0;
-    align-items: center;
+.book-details h2 {
+    margin-top: 0;
+    margin-bottom: 1rem; 
+    line-height: 1.5rem; 
 }
+
 
 aside {
     background-color: white;
     padding: 1rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    height: 100%; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    width: 200px; 
 }
 
 form {
