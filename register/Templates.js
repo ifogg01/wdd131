@@ -1,6 +1,3 @@
-// Templates.js
-
-// Function to create a new participant template
 export function participantTemplate(count) {
     return `
     <section class="participant${count} participant-section">
@@ -42,7 +39,6 @@ export function participantTemplate(count) {
     </section>`;
 }
 
-// Function to create a success message template
 export function successTemplate(info) {
     return `Thank you ${info.name} for registering. You have registered ${info.participantCount} participants and owe $${info.totalFees} in Fees.`;
 }

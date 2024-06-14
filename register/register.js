@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     let participantCount = 1;
 
-    // Set the initial number of participants
     const participantsFieldset = document.querySelector('.participants');
     const addButton = document.querySelector('#add');
 
-    // Function to create a new participant template
     function participantTemplate(count) {
         return `
         <section class="participant${count} participant-section">
@@ -47,51 +45,36 @@ document.addEventListener('DOMContentLoaded', () => {
         </section>`;
     }
 
-    // Function to create a success message template
     function successTemplate(info) {
         return `Thank you ${info.name} for registering. You have registered ${info.participantCount} participants and owe $${info.totalFees} in Fees.`;
     }
 
-    // Function to calculate total fees
     function totalFees() {
-        // the selector below lets us grab any element that has an id that begins with "fee"
         let feeElements = document.querySelectorAll("[id^=fee]");
         console.log(feeElements);
-        // querySelectorAll returns a NodeList. It's like an Array, but not exactly the same.
-        // The line below is an easy way to convert something that is list-like to an actual Array so we can use all of the helpful Array methods...like reduce
-        // The "..." is called the spread operator. It "spreads" apart the list, then the [] we wrapped it in inserts those list items into a new Array.
         feeElements = [...feeElements];
-        // sum up all of the fees. Something like Array.reduce() could be very helpful here :) Or you could use a Array.forEach() as well.
-        // Remember that the text that was entered into the input element will be found in the .value of the element.
         const total = feeElements.reduce((sum, input) => sum + (parseFloat(input.value) || 0), 0);
-        // once you have your total make sure to return it!
         return total;
     }
 
-    // Add event listener to the Add Participant button
     addButton.addEventListener('click', () => {
         participantCount++;
         addButton.insertAdjacentHTML('beforebegin', participantTemplate(participantCount));
     });
 
-    // Function to handle form submission
     function submitForm(event) {
         event.preventDefault();
 
-        // Calculate total fees
         const total = totalFees();
 
-        // Get the adult name from the form
         const adultName = document.querySelector('#adult_name').value;
 
-        // Hide the form and show the summary
         const form = document.querySelector('form');
         form.style.display = 'none';
 
         const summaryElement = document.querySelector('#summary');
         summaryElement.style.display = 'block';
 
-        // Insert the success message into the summary element
         summaryElement.innerHTML = successTemplate({
             name: adultName,
             participantCount,
@@ -99,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add event listener to the form for submit event
     const form = document.querySelector('form');
     form.addEventListener('submit', submitForm);
 });

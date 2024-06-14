@@ -88,7 +88,6 @@ input:hover::placeholder {
     width: 48%;
 }
 
-/* Style checkbox and radio. To do this we have to hide the defaults then we create our own */
 input[type="radio"] {
     display: none;
 }
@@ -133,7 +132,6 @@ label.radio:after {
 input[type="radio"]:checked + label:after {
     opacity: 1;
 }
-/* end style checkbox and radio */
 .btn-block {
     margin-top: 10px;
     text-align: center;
@@ -157,7 +155,6 @@ button:hover {
     }
 }
 
-/* New styles for participants grid */
 .participants {
     display: grid;
     grid-template-columns: 1fr 1fr;
