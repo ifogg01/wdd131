@@ -8,6 +8,9 @@ header {
     padding: 20px;
     background-color: #fff;
     border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo {
@@ -17,7 +20,7 @@ header {
 }
 
 .logo img {
-    height: 90px;
+    max-height: 90px;
     margin-right: 10px;
 }
 
@@ -25,6 +28,7 @@ header {
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    width: 100%;
 }
 
 .search-bar input {
@@ -44,47 +48,57 @@ header {
     cursor: pointer;
 }
 
-.button :hover{
-        transition: all 1.0s ease 0s;
-    background-color: white; 
-    box-shadow: 2px 2px 3px #6f7364; 
-}
-h1{
-    font-family: "Boogaloo", Arial, Helvetica, sans-serif;
-    font-size: 70px;
-   
+.button:hover {
+    transform: scale(1.15);
+    transition: all 1.0s ease 0s;
+    box-shadow: 1px 1px 2px #6f7364;  
 }
 
+h1 {
+    font-family: "Boogaloo", Arial, Helvetica, sans-serif;
+    font-size: 70px;
+}
+
+h2{
+    color: rgb(56, 237, 237);
+    font-family: "Boogaloo", Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    text-shadow: 1px 1px 6px #555;
+}
 main {
     padding: 20px;
     display: flex;
     justify-content: center;
 }
 
-h2{
-    font-family: "Boogaloo", Arial, Helvetica, sans-serif;
-    color: rgb(17, 228, 228);
+.main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
 }
 
-.applecrisp{
+.applecrisp {
     max-width: 250px;
     max-height: 250px;
+    margin-right: 20px;
 }
 
 .recipe-card img {
-       height: -10%;
-       width: -10%;
+    height: -10%;
+    width: -10%;
 }
+
 .recipe-card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
     max-width: 800px;
     margin-bottom: 20px;
 }
-
 
 .recipe-info {
     padding: 20px;
@@ -136,46 +150,101 @@ h2{
 
 footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     padding: 20px;
     background-color: #f9f9f9;
     border-top: 1px solid #ccc;
+    text-align: center;
+    justify-content: space-around;
 }
 
-footer .left-content {
+footer .left-content, footer .right-content {
     flex: 1;
 }
 
-footer .right-content {
+.right-content p {
+    font-size: x-small;
+}
+
+.right-content {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    text-align: right;
 }
- 
-.right-content p{
-    font-size: x-small;
-}
-}
+
 .social {
     display: flex;
     gap: 10px;
 }
 
-.social a {
-    display: inline-block;
-}
-
 .social img {
     width: 55px;
     height: 55px;
+    transition: transform 1.0s ease, box-shadow 1.0s ease;
 }
 
-.social :hover{
-    transform: scale(1.1);
+.social img:hover {
+    transform: scale(1.15);
+    background-color: azure;
     transition: all 1.0s ease 0s;
-    background-color: white; 
-    box-shadow: 15px 5px 10px #6f7364; 
+    box-shadow: 5px 5px 10px #6f7364; 
 }
 
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 50px;
+    }
 
+    .search-bar input {
+        width: 70%;
+    }
+
+    .recipe-card {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .recipe-info {
+        padding: 10px;
+    }
+
+    .tags li, .ingredients li, .instructions li {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .search-bar input {
+        width: 60%;
+    }
+
+    .recipe-card {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .recipe-info {
+        padding: 5px;
+    }
+
+    .tags li, .ingredients li, .instructions li {
+        font-size: 0.8em;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .applecrisp {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
