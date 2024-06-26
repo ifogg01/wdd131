@@ -48,19 +48,18 @@ header {
     cursor: pointer;
 }
 
-
-
 h1 {
     font-family: "Boogaloo", Arial, Helvetica, sans-serif;
     font-size: 70px;
 }
 
-h2{
+h2 {
     color: rgb(56, 237, 237);
     font-family: "Boogaloo", Arial, Helvetica, sans-serif;
     font-size: 35px;
     text-shadow: 1px 1px 6px #555;
 }
+
 main {
     padding: 20px;
     display: flex;
@@ -75,20 +74,9 @@ main {
     max-width: 1200px;
 }
 
-.applecrisp {
-    max-width: 250px;
-    max-height: 250px;
-    margin-right: 20px;
-}
-
-.recipe-card img {
-    height: -10%;
-    width: -10%;
-}
-
 .recipe-card {
     display: flex;
-    flex-direction: column;
+    align-items: flex-start;
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
@@ -96,16 +84,17 @@ main {
     margin-bottom: 20px;
 }
 
-.recipe-info {
-    padding: 20px;
+.recipe-image {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-right: 20px;
 }
 
-.tag {
-    background-color: #eee;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 0.9em;
-    color: #555;
+.recipe-info {
+    padding: 20px;
+    flex-grow: 1;
 }
 
 .recipe-title {
@@ -232,15 +221,5 @@ footer .left-content, footer .right-content {
 
     .tags li, .ingredients li, .instructions li {
         font-size: 0.8em;
-    }
-
-    .main-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .applecrisp {
-        margin-right: 0;
-        margin-bottom: 20px;
     }
 }
