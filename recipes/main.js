@@ -63,5 +63,4 @@ searchInput.addEventListener('keyup', event => {
     }
 });
 
-// Initial render
 renderRecipes(recipes);

@@ -177,7 +177,6 @@ footer .left-content, footer .right-content {
     box-shadow: 5px 5px 10px #6f7364; 
 }
 
-/* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
     h1 {
         font-size: 50px;
