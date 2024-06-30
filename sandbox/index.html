@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random TikTok Video from @dadadvicefrombo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #random-video {
+            width: 100%;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="random-video"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Array of TikTok video URLs
+            const videoURLs = [
+                "https://www.tiktok.com/@dadadvicefrombo/video/7221717823477910826?lang=en",
+                "https://www.tiktok.com/@dadadvicefrombo/video/7098535189004946730?lang=en",
+                "https://www.tiktok.com/@dadadvicefrombo/video/7384623724667866398?lang=en"
+            ];
+
+            // Function to get a random video URL
+            function getRandomVideoURL() {
+                const randomIndex = Math.floor(Math.random() * videoURLs.length);
+                return videoURLs[randomIndex];
+            }
+
+            // Get a random video URL
+            const randomVideoURL = getRandomVideoURL();
+
+            // Set the embed HTML
+            const embedHTML = `<blockquote class="tiktok-embed" cite="${randomVideoURL}" data-video-id="${randomVideoURL.split('/').pop().split('?')[0]}" style="max-width: 605px;min-width: 325px;" > <section> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>`;
+
+            // Insert the embed HTML into the page
+            document.getElementById("random-video").innerHTML = embedHTML;
+        });
+    </script>
+</body>
+</html>
