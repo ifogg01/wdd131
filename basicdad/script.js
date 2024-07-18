@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
+    addRandomVideo();
+    addForm();
+});
+
+function addRandomVideo() {
     const videoURLs = [
         "https://www.tiktok.com/@dadadvicefrombo/video/7221717823477910826?lang=en",
         "https://www.tiktok.com/@dadadvicefrombo/video/7098535189004946730?lang=en",
@@ -51,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "https://www.tiktok.com/@dadadvicefrombo/video/7081446460482637102?lang=en",
         "https://www.tiktok.com/@dadadvicefrombo/video/7080329591860022571?lang=en",
         "https://www.tiktok.com/@dadadvicefrombo/video/7002776590862060806?lang=en"
+
     ];
 
     function getRandomVideoURL() {
@@ -67,14 +73,18 @@ document.addEventListener("DOMContentLoaded", function() {
         </blockquote>
     `;
 
-    document.getElementById("random-video").innerHTML = embedHTML;
+    const randomVideoDiv = document.getElementById("random-video");
+    if (randomVideoDiv) {
+        randomVideoDiv.innerHTML = embedHTML;
+    }
 
     const script = document.createElement('script');
     script.src = 'https://www.tiktok.com/embed.js';
     script.async = true;
     document.body.appendChild(script);
+}
 
-    // Adding dynamic form
+function addForm() {
     const feedbackDiv = document.getElementById("feedback");
 
     const formHTML = `
@@ -107,7 +117,9 @@ document.addEventListener("DOMContentLoaded", function() {
         </form>
     `;
 
-    feedbackDiv.innerHTML = formHTML;
+    if (feedbackDiv) {
+        feedbackDiv.innerHTML = formHTML;
+    }
 
     document.getElementById("contactForm").addEventListener("submit", function(event) {
         event.preventDefault();
@@ -118,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function() {
         alert(`Thank you for your submission, ${data.fname} ${data.lname}!`);
         console.log("Form Data Submitted: ", data);
 
-        // Redirect to thank you page
         window.location.href = 'thankyou.html';
     });
-});
+}
